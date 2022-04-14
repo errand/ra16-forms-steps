@@ -1,6 +1,8 @@
 import {useState} from "react";
 
-export default function Form() {
+import Training from "../models/Training";
+
+export default function Form({onAdd}) {
 
   const [form, setForm] = useState({
     date: '',
@@ -17,7 +19,12 @@ export default function Form() {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    console.log(evt)
+    const training = new Training(form.date, form.distance)
+    onAdd(training)
+    setForm({
+      date: '',
+      distance: '',
+    })
   }
 
   return(
