@@ -7,8 +7,16 @@ export default function TrainingsCalculator() {
   const [trainings, setTrainings] = useState([])
 
   const handleAdd = training => {
-    setTrainings(prevTrainings => [...prevTrainings, training])
-    console.log(trainings)
+    const index = trainings.findIndex(value => value.date === training.date)
+    if(index > -1) {
+      const items = [...trainings]
+      const item = {...items[index]}
+      item.distance += training.distance
+      items[index] = item
+      setTrainings(items)
+    } else {
+      setTrainings(prevTrainings => [...prevTrainings, training])
+    }
   }
 
   return (
