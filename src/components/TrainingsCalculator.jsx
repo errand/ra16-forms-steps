@@ -15,7 +15,11 @@ export default function TrainingsCalculator() {
       items[index] = item
       setTrainings(items)
     } else {
-      setTrainings(prevTrainings => [...prevTrainings, training])
+      const oldItems = [...trainings, training]
+      const sortedItems = oldItems.sort(function(a,b){
+        return new Date(b.date) - new Date(a.date);
+      });
+      setTrainings(sortedItems)
     }
   }
 
