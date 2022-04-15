@@ -1,9 +1,9 @@
 import {nanoid} from 'nanoid';
 
 export default class Training {
-  constructor(title, distance) {
+  constructor(date, distance) {
     this.id = nanoid();
-    this.title = title;
+    this.date = date;
     this.distance = distance;
   }
 }

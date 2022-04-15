@@ -1,10 +1,10 @@
 import './App.css';
-import StepsCalculator from "./components/StepsCalculator";
+import TrainingsCalculator from "./components/TrainingsCalculator";
 
 function App() {
   return (
     <>
-      <StepsCalculator />
+      <TrainingsCalculator />
     </>
   );
 }

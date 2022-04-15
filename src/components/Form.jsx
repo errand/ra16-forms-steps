@@ -39,7 +39,7 @@ export default function Form({onAdd}) {
           <input type="text" id="distance" name="distance" value={form.distance} onChange={handleDistance} />
         </div>
         <div className="form-group">
-          <button>OK</button>
+          <button type="submit">OK</button>
         </div>
       </div>
     </form>
