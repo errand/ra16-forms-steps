@@ -16,8 +16,9 @@ export default function TrainingsCalculator() {
       setTrainings(items)
     } else {
       const oldItems = [...trainings, training]
+      const pattern = /(\d{2})\.(\d{2})\.(\d{4})/;
       const sortedItems = oldItems.sort(function(a,b){
-        return new Date(b.date) - new Date(a.date);
+        return new Date(b.date.replace(pattern,'$3-$2-$1')) - new Date(a.date.replace(pattern,'$3-$2-$1'));
       });
       setTrainings(sortedItems)
     }
