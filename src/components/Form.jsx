@@ -1,4 +1,5 @@
 import {useState} from "react";
+import PropTypes from "prop-types";
 
 import Training from "../models/Training";
 
@@ -45,3 +46,7 @@ export default function Form({onAdd}) {
     </form>
   )
 }
+
+Form.propTypes = {
+  onAdd: PropTypes.func.isRequired,
+};

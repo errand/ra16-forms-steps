@@ -43,11 +43,15 @@ export default function TrainingsCalculator() {
     }
   }
 
+  const handleDelete = id => {
+    setTrainings(prevState => prevState.filter(o => o.id !== id));
+  }
+
   return (
     <div className="wrapper" data-testid="test">
       <div className="wrapper--inner">
         <Form onAdd={handleAdd} />
-        <TrainingsList list={trainings} />
+        <TrainingsList list={trainings} onDelete={handleDelete} />
       </div>
     </div>
   );

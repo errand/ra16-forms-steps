@@ -1,10 +1,22 @@
-export default function TrainingsList({list, handleRemove}) {
+import PropTypes from "prop-types";
 
-  const listItems = list.map(item =><li key={item.id}>{item.date}{item.distance}</li>)
+export default function TrainingsList({list, onDelete: handleDelete}) {
+
+  const listItems = list.map(item =>
+    <div className="training--item" key={item.id}>
+      <div>{item.date}</div>
+      <div>{item.distance}</div>
+      <div className="pointer" onClick={() => handleDelete(item.id)}>✘</div>
+    </div>)
 
   return(
-    <ul>
+    <div className="training">
+      <div className="training--item"><div>Дата</div><div>Дистанция</div><div>Управление</div></div>
       {listItems}
-    </ul>
+    </div>
   )
 }
+TrainingsList.propTypes = {
+  list: PropTypes.array.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
