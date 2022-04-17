@@ -8,17 +8,20 @@ export default function TrainingsCalculator() {
   const [dateError, setDateError] = useState(false)
   const [distanceError, setDistanceError] = useState(false)
 
+  const toggleDistanceError = () => {setDistanceError(prev => !prev)}
+  const toggleDateError = () => {setDateError(prev => !prev)}
+
   const handleAdd = training => {
+
     const pattern = /(\d{2})\.(\d{2})\.(\d{4})/;
+
+    // Не мнгновенное присваивание
     if(pattern.test(training.date)) {
-      setDateError(value => {return !value})
+      toggleDateError()
     }
     if(Number.isInteger(training.distance)) {
-      setDistanceError(value => {return !value})
+      toggleDistanceError()
     }
-
-    console.log(dateError)
-    console.log(distanceError)
 
     if(pattern.test(training.date) && Number.isInteger(training.distance)) {
       const index = trainings.findIndex(value => value.date === training.date)
