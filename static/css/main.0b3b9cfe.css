@@ -1,0 +1,2 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);*,:after,:before{box-sizing:border-box}body,html{height:100%}body{font:14px/20px Lato,Arial,sans-serif;margin:0}#app,.wrapper{height:100%}.wrapper{align-items:center;display:flex;flex-direction:column;justify-content:center;width:100%}.wrapper--inner{width:200px}.training{padding-top:2rem}.training--item{grid-gap:1rem;grid-row-gap:1rem;display:grid;grid-template-columns:repeat(3,1fr)}.pointer{cursor:pointer}
+/*# sourceMappingURL=main.0b3b9cfe.css.map*/
