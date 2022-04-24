@@ -10,14 +10,6 @@ export default function TrainingsCalculator() {
 
     const pattern = /(\d{2})\.(\d{2})\.(\d{4})/;
 
-    // Не мнгновенное присваивание
-    if(pattern.test(training.date)) {
-      toggleDateError()
-    }
-    if(Number.isInteger(training.distance)) {
-      toggleDistanceError()
-    }
-
     if(pattern.test(training.date) && Number.isInteger(training.distance)) {
       const index = trainings.findIndex(value => value.date === training.date)
       if(index > -1) {
