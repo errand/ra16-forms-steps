@@ -5,11 +5,6 @@ import TrainingsList from "./TrainingsList";
 export default function TrainingsCalculator() {
 
   const [trainings, setTrainings] = useState([])
-  const [dateError, setDateError] = useState(false)
-  const [distanceError, setDistanceError] = useState(false)
-
-  const toggleDistanceError = () => {setDistanceError(prev => !prev)}
-  const toggleDateError = () => {setDateError(prev => !prev)}
 
   const handleAdd = training => {
 
@@ -38,8 +33,6 @@ export default function TrainingsCalculator() {
         });
         setTrainings(sortedItems)
       }
-      setDateError(value => {return !value})
-      setDistanceError(value => {return !value})
     } else {
       // set style and text
       return
